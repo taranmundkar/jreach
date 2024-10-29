@@ -1,72 +1,63 @@
-import type { NextConfig } from 'next'
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['hebbkx1anhila5yf.public.blob.vercel-storage.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.public.blob.vercel-storage.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'example.com',
+        port: '',
+        pathname: '/images/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.cloudfront.net',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.githubusercontent.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
   async redirects() {
     return [
       {
-        source: '/old-home',
-        destination: '/',
+        source: '/old-page',
+        destination: '/new-page',
         permanent: true,
       },
       {
-        source: '/old-about',
-        destination: '/about',
-        permanent: true,
-      },
-      {
-        source: '/old-services',
-        destination: '/services',
-        permanent: true,
-      },
-      {
-        source: '/old-contact',
-        destination: '/contact',
-        permanent: true,
+        source: '/legacy-api/:path*',
+        destination: '/api/:path*',
+        permanent: false,
       },
       {
         source: '/blog/:slug',
-        destination: '/news/:slug',
+        destination: '/articles/:slug',
         permanent: true,
       },
       {
-        source: '/resources',
-        destination: '/learning-center',
+        source: '/products/:category/:id',
+        destination: '/items/:category/:id',
         permanent: false,
       },
       {
-        source: '/old-get-started',
-        destination: '/get-started',
-        permanent: true,
-      },
-      {
-        source: '/webinars',
-        destination: '/events',
+        source: '/docs/:path*',
+        destination: 'https://new-documentation-site.com/:path*',
         permanent: false,
-      },
-      {
-        source: '/old-terms',
-        destination: '/terms-of-service',
-        permanent: true,
-      },
-      {
-        source: '/old-privacy',
-        destination: '/privacy-policy',
-        permanent: true,
-      },
-    ]
-  },
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'https://api.j-reach.com/:path*',
       },
     ]
   },
 }
 
-export default nextConfig
+module.exports = nextConfig

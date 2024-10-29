@@ -1,11 +1,82 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { CheckCircle, Users, Calendar, PhoneCall, Target, ClipboardCheck, Shield, Zap, TrendingUp } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import SafeComponent from '@/components/SafeComponent'
 
-export default function Home() {
+export default function JReachLandingPage() {
+  const currentYear = new Date().getFullYear()
+
+  const features = [
+    {
+      title: "Unmatched Cold Outbound Expertise",
+      description: "Our strategies generate high-quality leads that paid ads can't touch, ensuring a steady flow of potential clients",
+      icon: <Target className="h-6 w-6 text-yellow-500" />,
+    },
+    {
+      title: "Protect Your Brand Reputation",
+      description: "We use our own accounts for outreach, safeguarding your brand image and eliminating the risk of account blocks",
+      icon: <Shield className="h-6 w-6 text-yellow-500" />,
+    },
+    {
+      title: "Stay Ahead of Competitors",
+      description: "While others struggle with copied ad content, our unique outbound approach keeps you steps ahead",
+      icon: <Users className="h-6 w-6 text-yellow-500" />,
+    },
+    {
+      title: "Guaranteed Results",
+      description: "We're so confident in our methods, we guarantee new clients within your first month with us",
+      icon: <CheckCircle className="h-6 w-6 text-yellow-500" />,
+    },
+    {
+      title: "Scalable Growth",
+      description: "Our strategies are designed to scale with your business, ensuring consistent growth as you expand",
+      icon: <TrendingUp className="h-6 w-6 text-yellow-500" />,
+    },
+    {
+      title: "Rapid Implementation",
+      description: "Get your campaigns up and running quickly with our streamlined onboarding and implementation process",
+      icon: <Zap className="h-6 w-6 text-yellow-500" />,
+    },
+  ]
+
+  const process = [
+    {
+      title: "Strategic Outreach",
+      description: "We craft personalized messages that resonate with your ideal clients, opening doors to meaningful conversations",
+      icon: <Target className="h-6 w-6 text-yellow-500" />,
+    },
+    {
+      title: "Expert Lead Qualification",
+      description: "Our team meticulously vets each lead, ensuring you only speak with prospects who are ready to engage",
+      icon: <ClipboardCheck className="h-6 w-6 text-yellow-500" />,
+    },
+    {
+      title: "Seamless Integration",
+      description: "Qualified leads are added directly to your calendar, streamlining your sales process and maximizing your time",
+      icon: <Calendar className="h-6 w-6 text-yellow-500" />,
+    },
+    {
+      title: "Continuous Optimization",
+      description: "We analyze campaign performance and make data-driven adjustments to improve results over time",
+      icon: <TrendingUp className="h-6 w-6 text-yellow-500" />,
+    },
+    {
+      title: "Personalized Follow-up",
+      description: "Our team handles follow-ups, ensuring no opportunity slips through the cracks",
+      icon: <PhoneCall className="h-6 w-6 text-yellow-500" />,
+    },
+    {
+      title: "Comprehensive Reporting",
+      description: "Get detailed insights into your campaign performance with our transparent reporting system",
+      icon: <CheckCircle className="h-6 w-6 text-yellow-500" />,
+    },
+  ]
+
   return (
     <div className="min-h-screen bg-beige-50">
       <header className="bg-white shadow-sm fixed w-full z-10">
@@ -78,38 +149,7 @@ export default function Home() {
               We specialize in cold outbound strategies that deliver consistent results, protect your reputation, and stay ahead of the competition
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "Unmatched Cold Outbound Expertise",
-                  description: "Our strategies generate high-quality leads that paid ads can't touch, ensuring a steady flow of potential clients",
-                  icon: <Target className="h-6 w-6 text-yellow-500" />,
-                },
-                {
-                  title: "Protect Your Brand Reputation",
-                  description: "We use our own accounts for outreach, safeguarding your brand image and eliminating the risk of account blocks",
-                  icon: <Shield className="h-6 w-6 text-yellow-500" />,
-                },
-                {
-                  title: "Stay Ahead of Competitors",
-                  description: "While others struggle with copied ad content, our unique outbound approach keeps you steps ahead",
-                  icon: <Users className="h-6 w-6 text-yellow-500" />,
-                },
-                {
-                  title: "Guaranteed Results",
-                  description: "We're so confident in our methods, we guarantee new clients within your first month with us",
-                  icon: <CheckCircle className="h-6 w-6 text-yellow-500" />,
-                },
-                {
-                  title: "Scalable Growth",
-                  description: "Our strategies are designed to scale with your business, ensuring consistent growth as you expand",
-                  icon: <TrendingUp className="h-6 w-6 text-yellow-500" />,
-                },
-                {
-                  title: "Rapid Implementation",
-                  description: "Get your campaigns up and running quickly with our streamlined onboarding and implementation process",
-                  icon: <Zap className="h-6 w-6 text-yellow-500" />,
-                },
-              ].map((item, index) => (
+              {features.map((item, index) => (
                 <Card key={index} className="border-yellow-500 border-2">
                   <CardHeader>
                     <CardTitle className="flex items-center space-x-2 text-yellow-800">
@@ -133,38 +173,7 @@ export default function Home() {
               We've refined our approach to deliver consistent results for our clients. Here's how we turn cold prospects into warm leads:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Strategic Outreach",
-                  description: "We craft personalized messages that resonate with your ideal clients, opening doors to meaningful conversations",
-                  icon: <Target className="h-6 w-6 text-yellow-500" />,
-                },
-                {
-                  title: "Expert Lead Qualification",
-                  description: "Our team meticulously vets each lead, ensuring you only speak with prospects who are ready to engage",
-                  icon: <ClipboardCheck className="h-6 w-6 text-yellow-500" />,
-                },
-                {
-                  title: "Seamless Integration",
-                  description: "Qualified leads are added directly to your calendar, streamlining your sales process and maximizing your time",
-                  icon: <Calendar className="h-6 w-6 text-yellow-500" />,
-                },
-                {
-                  title: "Continuous Optimization",
-                  description: "We analyze campaign performance and make data-driven adjustments to improve results over time",
-                  icon: <TrendingUp className="h-6 w-6 text-yellow-500" />,
-                },
-                {
-                  title: "Personalized Follow-up",
-                  description: "Our team handles follow-ups, ensuring no opportunity slips through the cracks",
-                  icon: <PhoneCall className="h-6 w-6 text-yellow-500" />,
-                },
-                {
-                  title: "Comprehensive Reporting",
-                  description: "Get detailed insights into your campaign performance with our transparent reporting system",
-                  icon: <CheckCircle className="h-6 w-6 text-yellow-500" />,
-                },
-              ].map((item, index) => (
+              {process.map((item, index) => (
                 <Card key={index} className="border-yellow-500 border-2">
                   <CardHeader>
                     <CardTitle className="flex items-center space-x-2 text-yellow-800">
@@ -190,6 +199,13 @@ export default function Home() {
             <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-white">
               <Link href="/schedule-call">Schedule Your Strategy Call Now</Link>
             </Button>
+          </div>
+        </section>
+
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-semibold text-yellow-800 mb-8 text-center">Safe Component Demo</h2>
+            <SafeComponent />
           </div>
         </section>
       </main>
@@ -228,7 +244,7 @@ export default function Home() {
           </div>
           <div className="mt-8 pt-8 border-t border-yellow-300 text-center">
             <p className="text-sm text-yellow-700">
-              &copy; {new Date().getFullYear()} J-Reach. All rights reserved. | <Link href="/privacy-policy" className="hover:text-yellow-600 ml-2">Privacy Policy</Link> | <Link href="/terms-of-service" className="hover:text-yellow-600 ml-2">Terms of Service</Link>
+              &copy; {currentYear} J-Reach. All rights reserved. | <Link href="/privacy-policy" className="hover:text-yellow-600 ml-2">Privacy Policy</Link> | <Link href="/terms-of-service" className="hover:text-yellow-600 ml-2">Terms of Service</Link>
             </p>
           </div>
         </div>
