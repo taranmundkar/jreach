@@ -130,7 +130,7 @@ export default function JReachLandingPage() {
                   src="https://www.loom.com/embed/c1d20d06bce544e39b423a57a8a994a0"
                   frameBorder="0"
                   allowFullScreen
-                  style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
                 ></iframe>
               </div>
             </div>

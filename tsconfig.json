@@ -26,9 +26,6 @@
       "@/components/*": [
         "components/*"
       ],
-      "@/styles/*": [
-        "styles/*"
-      ],
       "@/lib/*": [
         "lib/*"
       ],
